@@ -7,6 +7,7 @@ package sit.sit303.model.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -24,6 +25,8 @@ public class OfficeController {
     Connection conn = ConnectionFactory.getConnnection();
         try {
             PreparedStatement pstm = conn.prepareStatement(FIND);
+            pstm.setString(1, officeCode);
+            ResultSet rs = pstm.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(OfficeController.class.getName()).log(Level.SEVERE, null, ex);
         }
