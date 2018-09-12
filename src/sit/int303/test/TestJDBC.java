@@ -20,8 +20,8 @@ public class TestJDBC {
     private final  static  String URL = "jdbc : derby : //localhost:1527/classmodelg3";
     public static void main(String[] args) {
         try {
-            Class.forName("org.apache.derby.jdbc.ClientDataSource");//ADD DriveDB
-           Connection conn =  DriverManager.getConnection(URL, "app", "app");  //สร้างconnection
+            Class.forName("org.apache.derby.jdbc.ClientDriver");//ADD DriveDB
+           Connection conn = DriverManager.getConnection(URL, "app", "app");  //สร้างconnection
         } catch (ClassNotFoundException ex) {
             System.out.println(ex);
         }
