@@ -5,17 +5,23 @@
  */
 package sit.int303.test;
 
+import java.sql.Driver;
+import java.sql.DriverManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sun.rmi.transport.Connection;
 
 /**
  *
  * @author Student Lab
  */
 public class TestJDBC {
+//    private final  static String URL = "potocal : subpotocal : ชื่อsever";
+    private final  static  String URL = "jdbc : derby : //localhost:1527/classmodelg3";
     public static void main(String[] args) {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDataSource");//ADD DriveDB
+           Connection conn =  DriverManager.getConnection(URL, "app", "app");  //สร้างconnection
         } catch (ClassNotFoundException ex) {
             System.out.println(ex);
         }
