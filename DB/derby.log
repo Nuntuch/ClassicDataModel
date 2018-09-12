@@ -29,3 +29,5 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\Student Lab\Desktop\ClassicDataModelG3\DB
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Sep 12 14:57:44 ICT 2018: Shutting down Derby engine
