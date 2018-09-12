@@ -17,11 +17,13 @@ import java.util.logging.Logger;
  * @author Student Lab
  */
 public class TestJDBC {
+    
+//    private final static String URL ="potocal://subpotocal/ชื่อserver";
     private final static String URL ="jdbc:derby://localhost:1527/classicmodelg3";
     public static void main(String[] args) {
         try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver");
-           Connection conn = DriverManager.getConnection(URL, "app", "app");
+            Class.forName("org.apache.derby.jdbc.ClientDriver");//ADD Driver
+           Connection conn = DriverManager.getConnection(URL, "app", "app");//สร้าง connection
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
         }
