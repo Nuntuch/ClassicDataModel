@@ -27,6 +27,9 @@ public class OfficeController {
             PreparedStatement pstm = conn.prepareStatement(FIND);
             pstm.setString(1, officeCode);
             ResultSet rs = pstm.executeQuery();
+            if(rs.next()){
+            return maps(rs);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(OfficeController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -35,5 +38,12 @@ public class OfficeController {
     public List<Office> getAll(){
     
         return null;
+    }
+
+    private Office maps(ResultSet rs) {
+        Office office = new Office();
+        
+        
+        office.
     }
 }
