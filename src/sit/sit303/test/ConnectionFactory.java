@@ -5,27 +5,27 @@
  */
 package sit.sit303.test;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Student Lab
  */
-public class TestJDBC {
-    
+public class ConnectionFactory {
+
 //    private final static String URL ="potocal://subpotocal/ชื่อserver";
-    private final static String URL ="jdbc:derby://localhost:1527/classicmodelg3";
-    public static void main(String[] args) {
+    private final static String URL = "jdbc:derby://localhost:1527/classicmodelg3";
+
+    public static Connection getConnnection() {
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");//ADD Driver
-           Connection conn = DriverManager.getConnection(URL, "app", "app");//สร้าง connection
+            Connection conn = DriverManager.getConnection(URL, "app", "app");//สร้าง connection
+            return conn ;
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex);
         }
+    return null;
     }
 }
