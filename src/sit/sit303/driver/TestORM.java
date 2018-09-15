@@ -7,7 +7,7 @@ package sit.sit303.driver;
 
 import java.util.List;
 import java.util.Scanner;
-import sit.sit303.model.Office;
+import sit.sit303.model.MyOffice;
 import sit.sit303.model.controller.OfficeController;
 
 /**
@@ -18,7 +18,7 @@ public class TestORM {
 
     public static void main(String[] args) {
 //        testFind();
-testGetAll();
+        testGetAll();
     }
 
     public static void testFind() {
@@ -29,7 +29,7 @@ testGetAll();
             System.out.print("Enter office code to serach(stop to exit);");
             officeCode = sc.next();
             if (!"stop".equalsIgnoreCase(officeCode)) {
-                Office office = OfficeController.find(officeCode);
+                MyOffice office = OfficeController.find(officeCode);
                 if (office != null) {
                     System.out.println(office);
                 } else {
@@ -39,13 +39,15 @@ testGetAll();
             }
 
         } while (!"stop".equalsIgnoreCase(officeCode));
-   
+
     }
+
     public static void testGetAll() {
-        List<Office> offices = OfficeController.getAll();
-        for (Office office : offices) {
+        List<MyOffice> offices = OfficeController.getAll();
+//        for (MyOffice office : offices) {
+        offices.forEach((office) -> {
             System.out.println(office);
-        }
-        
+        });
+
     }
 }

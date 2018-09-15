@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ClassicDataModelG3PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>sit.sit303.model.ProductLine</class>
+    <class>sit.sit303.model.Payment</class>
+    <class>sit.sit303.model.Customer</class>
+    <class>sit.sit303.model.Office</class>
+    <class>sit.sit303.model.Product</class>
+    <class>sit.sit303.model.Orders</class>
+    <class>sit.sit303.model.OrderDetail</class>
+    <class>sit.sit303.model.Employee</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/classicmodelg3"/>
+      <property name="javax.persistence.jdbc.user" value="app"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.password" value="app"/>
+    </properties>
+  </persistence-unit>
+</persistence>

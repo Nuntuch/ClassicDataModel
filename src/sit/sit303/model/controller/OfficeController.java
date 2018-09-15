@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sit.sit303.model.Office;
+import sit.sit303.model.MyOffice;
 
 /**
  *
@@ -24,7 +24,7 @@ public class OfficeController {
     private final static String FIND = "SELECT * FROM office o WHERE o.officecode = ?";
     private final static String GET_ALL = "SELECT * FROM office";
 
-    public static Office find(String officeCode) {
+    public static MyOffice find(String officeCode) {
         Connection conn = ConnectionFactory.getConnnection();
         try {
             PreparedStatement pstm = conn.prepareStatement(FIND);
@@ -40,8 +40,8 @@ public class OfficeController {
         return null;
     }
 
-    public static List<Office> getAll() {
-        List<Office> officeList = new ArrayList();
+    public static List<MyOffice> getAll() {
+        List<MyOffice> officeList = new ArrayList();
         Connection conn = ConnectionFactory.getConnnection();
         try {
             PreparedStatement pstm = conn.prepareStatement(GET_ALL);
@@ -57,8 +57,8 @@ public class OfficeController {
         return officeList;
     }
 
-    private static Office maps(ResultSet rs) throws SQLException {
-        Office office = new Office();
+    private static MyOffice maps(ResultSet rs) throws SQLException {
+        MyOffice office = new MyOffice();
 
         office.setCity(rs.getString("city"));
         office.setCountry(rs.getString("country"));
