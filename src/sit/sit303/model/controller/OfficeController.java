@@ -40,10 +40,15 @@ public class OfficeController {
         return null;
     }
 
-    private Office maps(ResultSet rs) {
+    private Office maps(ResultSet rs) throws SQLException {
         Office office = new Office();
         
         
-        office.
+        office.setCity(rs.getString("city"));
+        office.setCountry(rs.getString("country"));
+        office.setOfficeCode(rs.getString("officecode"));
+        office.setPhone(rs.getString("phone"));
+        
+        return office;
     }
 }
